@@ -8,7 +8,7 @@ Hardware teams can review a bill of materials for cost, availability, and manufa
 
 ### Why It Matters
 
-BOMFlow should explore a customer-shaped automation where sustainability intelligence becomes part of the same review workflow as other hardware release signals. The project is also intentionally aligned with the AllSpice role context captured in [AllSpice role inspiration](../../../references/allspice-role-inspiration.md).
+BOMFlow should explore a customer-shaped automation where sustainability intelligence becomes part of the same review workflow as other hardware release signals.
 
 ### Current State
 
@@ -18,56 +18,81 @@ Working assumption: teams may handle BOM carbon analysis through spreadsheets, s
 
 ### Project Type
 
-New portfolio/prototype project for hardware workflow automation.
+New prototype project for hardware workflow automation.
 
 ### Prior Art / Existing System
 
 | Source / Artifact | What It Shows | Keep / Discard / Rethink | Notes |
 |-------------------|---------------|---------------------------|-------|
-| [AllSpice role inspiration](../../../references/allspice-role-inspiration.md) | Example project includes carbon emissions report for parts in a design | Keep | Strong role alignment, but should stay as context rather than the core product narrative. |
-| BOMFlow A/B/C idea | A: carbon report; B: design-review delta; C: PLM/manufacturing sync | Keep as working roadmap | A is the foundation. |
-| Premature implementation spike | Basic CLI/report shape | Rethink later | Removed so Loom can lead. |
+| BOMFlow roadmap parts | Part 1: BOM Carbon Report; Part 2: Design Review Delta; Part 3: Integration Handoff | Keep as working roadmap | The BOM Carbon Report is the foundation. |
 
 ### Working Shape
 
-BOMFlow is likely a small hardware automation project that starts with a single-BOM carbon report, then grows into design-review deltas and integration handoffs.
+BOMFlow is likely a small hardware automation project with three descriptive parts:
+
+1. **BOM Carbon Report:** Generate a carbon report from one BOM and a mock emissions catalog.
+2. **Design Review Delta:** Compare BOM revisions and highlight sustainability-impact changes for review.
+3. **Integration Handoff:** Prepare structured outputs that could feed PLM, manufacturing, compliance, or release workflows.
 
 ### First Useful Version
 
-A: Given one BOM and a mock emissions catalog, generate a clear carbon report that a hardware team could use during design review.
+Part 1, the BOM Carbon Report: Given one BOM and a mock emissions catalog, generate a clear carbon report that a hardware team could use during design review.
+
+Design Review Delta and Integration Handoff are inactive future mini-Loom cycles in the same BOMFlow project. They are not required to prove the first useful version.
+
+### Target Report Shape
+
+The first BOM Carbon Report should be review-ready, not compliance-grade.
+
+Minimum report sections:
+
+- BOM summary: part count, quantity count, and total estimated kgCO2e.
+- Top carbon contributors.
+- Line-item table with part number, category, quantity, emission factor, and subtotal.
+- Data quality flags for missing factors, estimated factors, and low-confidence matches.
+- Review notes that highlight what a hardware engineer should inspect before release.
+- Methodology caveat that mock data is not production-grade emissions science.
+
+Future state: a compliance-style report could add evidence links, audit traceability, confidence scoring, and assumptions by part category. That should not be part of the first useful version.
 
 ### Explicitly Out of Scope
 
 - Real supplier API integrations.
 - Real PLM/manufacturing sync.
 - Production-grade emissions methodology.
+- Compliance-grade reporting.
 - UI or visual workflow builder.
 - Multi-user hosting or deployment.
-- B and C implementation before A is shaped and validated.
+- Design Review Delta and Integration Handoff implementation in the first useful version.
 
 ## Users & Stakeholders
 
 ### Primary User / Operator
 
-Open question. Candidate lenses:
+The primary user for the BOM Carbon Report is a hardware engineer reviewing a BOM before design release.
 
-- Hardware engineer reviewing a BOM before design release.
-- Forward-deployed engineer building a reusable customer automation.
-- Sustainability/compliance reviewer who needs BOM-level evidence.
+This user needs a low-friction review artifact that shows carbon impact, data-quality concerns, and high-impact parts clearly enough to inform design review decisions.
+
+### Setup / Workflow Operator
+
+An automation engineer or workflow owner may configure the report generation and keep it repeatable, but they are not the first user the report must satisfy.
 
 ### Future / External Users
 
 - Engineering managers who need release-gate visibility.
+- Sustainability/compliance reviewers who need BOM-level evidence.
 - Manufacturing or PLM operators who need structured metadata.
-- External evaluators reviewing John's technical judgment and communication.
+- Future maintainers or collaborators who need to understand the automation model.
 
 ### Stakeholders
 
 | Stakeholder | Role | Needs | Constraints |
 |-------------|------|-------|-------------|
-| John | Builder and candidate | A project that is interesting, credible, and role-aligned | Time, portfolio clarity, not overbuilding |
-| Portfolio / hiring evaluators | Evaluator | Evidence of automation thinking, customer empathy, and code quality | Short attention window |
-| Hardware team persona | Target user | Useful review signal inside normal design workflow | Needs low-friction, explainable output |
+| John | Builder | An interesting, credible, and useful project | Time, clarity, not overbuilding |
+| Future maintainers / collaborators | Evaluator | Evidence of automation thinking, customer empathy, and code quality | Short attention window |
+| Hardware engineer | Primary user | Useful review signal inside normal design workflow | Needs low-friction, explainable output |
+| Automation engineer / workflow owner | Setup operator | Repeatable report generation and integration path | Should not need production integrations for the first version |
+| Sustainability/compliance reviewer | Future stakeholder | BOM-level evidence and methodology caveats | Needs data-quality limits to be explicit |
 
 ### Decision Owner
 
@@ -77,7 +102,7 @@ John decides whether the project is worth continuing and when to move to Require
 
 ### Timeline
 
-No hard deadline captured yet. The project should stay small enough to become application evidence quickly.
+No hard deadline captured yet. The project should stay small enough to validate the first useful workflow quickly.
 
 ### Resources
 
@@ -88,7 +113,7 @@ No hard deadline captured yet. The project should stay small enough to become ap
 ### Technical Constraints
 
 - Prefer a small, inspectable implementation when Loom reaches Implementation.
-- Keep room for Python action scripts, structured outputs, and integration boundaries because those match the target role context.
+- Keep room for Python action scripts, structured outputs, and integration boundaries.
 - Avoid real external dependencies until the project needs them.
 
 ## Success & Validation
@@ -97,28 +122,32 @@ No hard deadline captured yet. The project should stay small enough to become ap
 
 | Metric / Signal | Target | How We'll Measure |
 |-----------------|--------|-------------------|
-| Role alignment | Clear link to hardware workflow automation, Actions-style execution, and integration boundaries | README/Loom docs can explain the mapping in under one minute |
-| First useful version clarity | A is independently useful before B/C | Requirements can define A without relying on future phases |
-| Portfolio evidence | Shows customer-shaped automation thinking | Final artifact can support an application note or demo |
+| Workflow alignment | Clear link to hardware review automation, scriptable execution, and integration boundaries | README/Loom docs can explain the mapping in under one minute |
+| First useful version clarity | The BOM Carbon Report is the complete first useful version | Requirements can define the BOM Carbon Report without relying on future phases |
+| Report usefulness | Hardware engineer can identify total impact, top contributors, and data-quality concerns | Report shape includes summary, line items, flags, review notes, and methodology caveat |
+| Project evidence | Shows customer-shaped automation thinking | Final artifact can support a concise demo or project note |
 
 ### Validation Strategy
 
-Before Requirements, validate that the A/B/C roadmap is still the right story and that A has a clear first operator, inputs, outputs, and non-goals.
+Discovery is ready to hand off to Requirements because the BOM Carbon Report has a clear primary user, first-version boundary, report shape, future-state boundaries, and non-goals.
 
-### Evidence Needed Before Requirements
+### Evidence Ready For Requirements
 
-- Chosen primary operator.
-- First useful version boundary for A.
-- Target output shape for the carbon report.
-- Decision on whether B and C are roadmap items in the same project or later Loom cycles.
+- Primary user: hardware engineer reviewing a BOM before design release.
+- First useful version: review-ready BOM Carbon Report from one BOM and mock emissions data.
+- Target report shape: summary, top contributors, line items, data-quality flags, review notes, and methodology caveat.
+- Scope boundaries: no supplier APIs, real PLM sync, UI, deployment, compliance-grade reporting, Design Review Delta, or Integration Handoff in the first useful version.
+- Future cycles: Design Review Delta and Integration Handoff stay visible as inactive mini-Loom cycles in the same project.
+- Requirements should convert the report shape and scope boundaries into acceptance criteria without rediscovering the product direction.
 
 ## Assumptions
 
 | Assumption | Why We Believe It | How We'll Validate |
 |-----------|------------------|-------------------|
-| A is the right first slice | B and C depend on the report engine and output model | Requirements should show A can stand alone |
+| BOM Carbon Report is the right first slice | Design Review Delta and Integration Handoff depend on the report engine and output model | Requirements should show the BOM Carbon Report can stand alone |
 | Mock emissions data is acceptable | The project is about automation shape, not emissions science | Make methodology limitations explicit |
-| A single repo is the right home | A/B/C form one project arc | Revisit during Architecture |
+| Review-ready reporting is enough for the first version | The primary user needs decision support during design review, not audit-grade compliance evidence | Requirements should keep compliance-style evidence as future state |
+| One repo is the right home | The three roadmap parts form one project arc | Keep later parts as inactive mini-Loom cycles until they become active work |
 
 ## Risks & Opportunities
 
@@ -126,61 +155,50 @@ Before Requirements, validate that the A/B/C roadmap is still the right story an
 
 | Risk | Impact | Likelihood | Mitigation |
 |------|--------|------------|-----------|
-| Project becomes too toy-like | Weak signal for senior integrations role | Medium | Tie outputs to design review and future integration boundaries |
+| Project becomes too toy-like | Weak signal of real workflow value | Medium | Tie outputs to design review and future integration boundaries |
 | Project overbuilds before clarity | Wasted time and muddy story | High | Use Loom gates before code |
 | Emissions methodology gets scrutinized beyond scope | Distracts from automation story | Medium | Label data as mock and focus on workflow |
 
 ### Opportunities
 
-- Strong direct mapping to the role inspiration without making the product feel company-specific.
-- Natural growth path from report to diff to PLM sync.
-- Good interview story for forward-deployed engineering: customer workflow to reusable automation.
-
-## Framework Feedback
-
-### What Worked
-
-The Loom framework caught the sequencing issue: we were implementing before Discovery and Requirements.
-
-### Friction
-
-"Let's Loom" can be misread as "prepare a Loom video" without checking the local Loom framework.
-
-### Template / Process Improvements
-
-For future sessions, treat "looming" as a trigger to inspect the Loom repo and start from the current phase gate.
+- Natural growth path from carbon report to design-review delta to integration handoff.
+- Future path toward compliance-style evidence once the review workflow is useful.
+- Good project story: customer workflow to reusable automation.
 
 ## Discovery Outputs
 
 ### Key Insights
 
-- BOMFlow should start with A: a single-BOM carbon report.
-- B and C are likely extensions, not separate repos.
-- The project needs a crisp first-user lens before Requirements.
+- BOMFlow should start with the BOM Carbon Report.
+- The BOM Carbon Report is the complete first useful version.
+- The first report should be review-ready, with compliance-style reporting left as future state.
+- Design Review Delta and Integration Handoff are inactive future mini-Loom cycles in the same BOMFlow project.
+- The first-user lens is a hardware engineer reviewing a BOM before design release.
 
 ### Open Questions
 
-- Who is the primary operator for A?
-- What should the report output include to be credible but not overbuilt?
-- Should B and C be named as roadmap phases or planned as later mini-Loom cycles?
+- None blocking Requirements.
 
 ### Requirements Handoff
 
 - **Core problem:** Carbon/sustainability review is disconnected from hardware design automation.
-- **Primary user / operator:** Open.
-- **Future / external users:** Hardware engineering teams, sustainability/compliance reviewers, PLM/manufacturing operators, portfolio / hiring evaluators.
-- **Working shape:** One repo, phased A/B/C roadmap, starting with a single-BOM carbon report.
-- **First useful version:** A report generated from one BOM and mock emissions data.
-- **Explicitly out of scope:** Real supplier APIs, real PLM sync, UI, deployment, B/C implementation before A.
-- **Success / validation signals:** Role alignment, clear first useful version, portfolio evidence.
-- **Open questions carried forward:** Primary operator, report output shape, A/B/C roadmap structure.
+- **Primary user / operator:** Hardware engineer reviewing a BOM before design release.
+- **Setup / workflow operator:** Automation engineer or workflow owner configuring repeatable report generation.
+- **Future / external users:** Hardware engineering teams, sustainability/compliance reviewers, PLM/manufacturing operators, future maintainers or collaborators.
+- **Working shape:** One repo, current BOM Carbon Report MVP cycle plus inactive future mini-Loom cycles for Design Review Delta and Integration Handoff.
+- **First useful version:** Review-ready BOM Carbon Report generated from one BOM and mock emissions data.
+- **Target report shape:** BOM summary, top contributors, line-item table, data-quality flags, review notes, and methodology caveat.
+- **Future state:** Compliance-style reporting with evidence links, audit traceability, confidence scoring, and category assumptions.
+- **Explicitly out of scope:** Real supplier APIs, real PLM sync, UI, deployment, compliance-grade reporting, Design Review Delta, or Integration Handoff implementation in the first useful version.
+- **Success / validation signals:** Workflow alignment, clear first useful version, report usefulness, project evidence.
+- **Open questions carried forward:** None blocking Requirements.
 
 ### Next Steps
 
-Finish Discovery by answering the open questions and deciding whether the phase gate is ready for Requirements.
+Move to Requirements and convert the Discovery handoff into concrete functional requirements, non-functional requirements, acceptance criteria, and explicit out-of-scope boundaries for the BOM Carbon Report.
 
 ## Phase Gate
 
-- **Ready to move to Requirements?** [ ] Yes [x] No
-- **Remaining concerns:** Primary operator and validation bar need to be explicit.
-- **Owner decision:** Pending.
+- **Ready to move to Requirements?** [x] Yes [ ] No
+- **Remaining concerns:** None blocking Requirements.
+- **Owner decision:** Approved to move to Requirements.

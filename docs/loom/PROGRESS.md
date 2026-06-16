@@ -5,24 +5,24 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 ## Project Snapshot
 
 **Project:** bomflow  
-**Date:** 2026-06-12  
+**Date:** 2026-06-16  
 **Owner:** John Hightshue + Codex  
-**Current Focus:** Phase 1 Discovery  
-**Total Complete:** 3%  
-**Calculation Basis:** Equal phase weights; Discovery is in progress and all later phases are unopened.
+**Current Focus:** Phase 2 Requirements  
+**Total Complete:** 14%  
+**Calculation Basis:** Equal phase weights; Discovery is complete and all later phases are unopened.
 
 ## Top-Level Phase Completion
 
 | Phase | Complete | Weight | Evidence / Source | Notes |
 |-------|----------|--------|-------------------|-------|
-| Discovery | 20% | 1 | [Discovery Progress](phases/01-discovery/PROGRESS.md) | Initial direction captured; user/problem validation still open. |
+| Discovery | 100% | 1 | [Discovery Progress](phases/01-discovery/PROGRESS.md) | Complete; ready for Requirements. |
 | Requirements | 0% | 1 | Requirements Progress | Not started. |
 | Architecture | 0% | 1 | Architecture Progress | Not started. |
 | Planning & Decomposition | 0% | 1 | Planning Progress | Not started. |
 | Contracts & Tests | 0% | 1 | Contracts & Tests Progress | Not started. |
 | Implementation | 0% | 1 | Implementation Progress | Not started. |
 | Review & Retrospective | 0% | 1 | Review Progress | Not started. |
-| **Phase Total** | **3%** | | | Rounded from 20 / 700. |
+| **Phase Total** | **14%** | | | Rounded from 100 / 700. |
 
 ## Scope Inventory
 
@@ -40,27 +40,29 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 
 | Scope | Type | Parent | Total | Current Focus | Progress Doc | Notes |
 |-------|------|--------|-------|---------------|--------------|-------|
-| Discovery | Phase | Project | 20% | Clarify problem, users, first useful version, and validation | [Progress](phases/01-discovery/PROGRESS.md) | Active |
+| Discovery | Phase | Project | 100% | Complete; ready for Requirements | [Progress](phases/01-discovery/PROGRESS.md) | Complete |
+| Requirements | Phase | Project | 0% | Convert Discovery handoff into requirements | TBD | Next |
 
 ## Next Score-Changing Actions
 
 | Action | Phase / Area | Expected Score Impact | Owner |
 |--------|--------------|-----------------------|-------|
-| Finish Discovery problem statement and first-user framing | Discovery | Moves Discovery toward phase gate readiness | John + Codex |
-| Decide whether A/B/C are one project roadmap or separate Loom cycles | Discovery | Clarifies first useful version and out-of-scope boundaries | John |
-| Capture validation evidence needed before Requirements | Discovery | Defines quality gate for moving forward | John + Codex |
+| Create Requirements phase artifact and progress ledger | Requirements | Opens Phase 2 and preserves Discovery handoff continuity | John + Codex |
 
 ## Decisions and Adjustments
 
 | Date | Scope | Change | Reason | Owner |
 |------|-------|--------|--------|-------|
-| 2026-06-12 | Project | Renamed working project from allspice to bomflow | The project is for an AllSpice role, but the artifact should stand on its own. | John |
-| 2026-06-12 | Process | Removed premature implementation spike | BOMFlow should begin with Loom Discovery before implementation. | John + Codex |
+| 2026-06-12 | Project | Renamed working project to BOMFlow | The artifact should stand on its own as a hardware workflow automation project. | John |
+| 2026-06-16 | Discovery | Replaced lettered roadmap shorthand with descriptive roadmap parts | Discovery should use stable product language before Requirements. | John + Codex |
+| 2026-06-16 | Discovery | Chose hardware engineer as primary user for the BOM Carbon Report | Public AllSpice product/docs context points to automation supporting hardware design review. | John + Codex |
+| 2026-06-16 | Discovery | Chose BOM Carbon Report as the full first useful version | Keeps Requirements focused while preserving later roadmap extensions. | John |
+| 2026-06-16 | Discovery | Chose review-ready report shape for the first version | Gives Requirements concrete output sections while leaving compliance-style reporting as future state. | John |
+| 2026-06-16 | Discovery | Scoped Design Review Delta and Integration Handoff as future mini-Loom cycles | Keeps the product arc visible without creating current MVP requirements. | John |
+| 2026-06-16 | Discovery | Closed Discovery phase gate | Discovery has enough context to hand off cleanly to Requirements. | John + Codex |
 
 ## Open Progress Questions
 
 | Scope | Question | Needed To Score Accurately | Owner |
 |-------|----------|----------------------------|-------|
-| Discovery | Who is the first primary operator: hardware engineer, forward-deployed engineer, or sustainability/compliance reviewer? | Primary user framing | John |
-| Discovery | Is A the full first useful version, or only a spike inside a larger A/B/C story? | First useful version boundary | John + Codex |
-| Discovery | What evidence should this create for a portfolio or hiring review? | Success criteria and validation | John |
+| Requirements | What acceptance criteria should define a useful BOM Carbon Report? | Requirements scope and validation | John + Codex |
