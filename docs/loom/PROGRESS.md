@@ -5,11 +5,11 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 ## Project Snapshot
 
 **Project:** bomflow  
-**Date:** 2026-06-24  
+**Date:** 2026-06-25  
 **Owner:** John Hightshue + Codex  
-**Current Focus:** Phase 3 Architecture  
-**Total Complete:** 29%  
-**Calculation Basis:** Equal phase weights; Discovery and Requirements are complete, and later phases are unopened.
+**Current Focus:** Phase 4 Planning & Decomposition  
+**Total Complete:** 43%  
+**Calculation Basis:** Equal phase weights; Discovery, Requirements, and Architecture are complete, and later phases are unopened.
 
 ## Top-Level Phase Completion
 
@@ -17,12 +17,12 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 |-------|----------|--------|-------------------|-------|
 | Discovery | 100% | 1 | [Discovery Progress](phases/01-discovery/PROGRESS.md) | Complete; ready for Requirements. |
 | Requirements | 100% | 1 | [Requirements Progress](phases/02-requirements/PROGRESS.md) | Complete; ready for Architecture. |
-| Architecture | 0% | 1 | Architecture Progress | Not started. |
+| Architecture | 100% | 1 | [Architecture Progress](phases/03-architecture/PROGRESS.md) | Complete; ready for Planning & Decomposition. |
 | Planning & Decomposition | 0% | 1 | Planning Progress | Not started. |
 | Contracts & Tests | 0% | 1 | Contracts & Tests Progress | Not started. |
 | Implementation | 0% | 1 | Implementation Progress | Not started. |
 | Review & Retrospective | 0% | 1 | Review Progress | Not started. |
-| **Phase Total** | **29%** | | | Rounded from 200 / 700. |
+| **Phase Total** | **43%** | | | Rounded from 300 / 700. |
 
 ## Scope Inventory
 
@@ -30,7 +30,7 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 |-------|------|--------|-----------------|--------------|----------------------|--------------------|--------------------|
 | Discovery | Phase | Project | [Discovery README](phases/01-discovery/README.md) | `phases/01-discovery/PROGRESS.md` | N/A | N/A | Included |
 | Requirements | Phase | Project | [Requirements README](phases/02-requirements/README.md) | `phases/02-requirements/PROGRESS.md` | N/A | N/A | Included |
-| Architecture | Phase | Project | Not started | TBD | TBD | TBD | Included later |
+| Architecture | Phase | Project | [Architecture README](phases/03-architecture/README.md) | `phases/03-architecture/PROGRESS.md` | `bomflow/` package, `data/fixtures/`, `data/catalogs/`, `reports/`, `.github/workflows/` | `tests/` | Included |
 | Planning & Decomposition | Phase | Project | Not started | TBD | TBD | TBD | Included later |
 | Contracts & Tests | Phase | Project | Not started | TBD | TBD | TBD | Included later |
 | Implementation | Phase | Project | Not started | TBD | TBD | TBD | Included later |
@@ -42,13 +42,13 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 |-------|------|--------|-------|---------------|--------------|-------|
 | Discovery | Phase | Project | 100% | Complete; ready for Requirements | [Progress](phases/01-discovery/PROGRESS.md) | Complete |
 | Requirements | Phase | Project | 100% | Complete; ready for Architecture | [Progress](phases/02-requirements/PROGRESS.md) | Complete |
-| Architecture | Phase | Project | 0% | Start Architecture from Requirements handoff | TBD | Next |
+| Architecture | Phase | Project | 100% | Complete; ready for Planning & Decomposition | [Progress](phases/03-architecture/PROGRESS.md) | Complete |
 
 ## Next Score-Changing Actions
 
 | Action | Phase / Area | Expected Score Impact | Owner |
 |--------|--------------|-----------------------|-------|
-| Create Architecture phase artifact and progress ledger | Architecture | Opens Phase 3 and converts requirements into implementation structure | John + Codex |
+| Start Planning & Decomposition from architecture handoff | Planning & Decomposition | Opens Phase 4 with module-level implementation units | John + Codex |
 
 ## Decisions and Adjustments
 
@@ -67,9 +67,13 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 | 2026-06-24 | Requirements | Chose a canonical mixed-case IoT sensor BOM as the first acceptance fixture | Gives Architecture, tests, and implementation a representative target while leaving broader fixture coverage for Contracts & Tests. | John |
 | 2026-06-24 | Loom Process | Captured reusable phase-template feedback | Documents gate authority, phase decision logs, agent authority, artifact vs gate completion, next-phase handoff, and process-feedback capture as general Loom improvements. | John + Codex |
 | 2026-06-24 | Requirements | Closed Requirements phase gate | Owner approved the Requirements handoff to Architecture. | John |
+| 2026-06-25 | Architecture | Opened Architecture phase with draft artifact and progress ledger | Converts Requirements into local Python module boundaries, data flow, CLI shape, fixture paths, and report artifact structure. | John + Codex |
+| 2026-06-25 | Architecture | Refined Architecture decisions from owner questions | Anchored Python runtime to a modern hardware automation stack, confirmed modularity, chose standard-library-first dependencies, clarified JSON consumer priority, timestamp determinism, schema contract boundary, and artifact paths. | John + Codex |
+| 2026-06-25 | Architecture | Added explicit portfolio stack evidence roadmap | Keeps Python report core practical while planning credible CI, Vue/TypeScript, Go, Postgres, Docker, Terraform/AWS, and Rust follow-on slices where useful. | John + Codex |
+| 2026-06-25 | Architecture | Closed Architecture phase gate | Owner approved the Architecture handoff to Planning & Decomposition. | John |
 
 ## Open Progress Questions
 
 | Scope | Question | Needed To Score Accurately | Owner |
 |-------|----------|----------------------------|-------|
-| Architecture | What module boundaries, data model, and local execution shape should implement the JSON-first BOM Carbon Report? | Architecture scope and validation | John + Codex |
+| Planning & Decomposition | How should the Python core, CI proof, schema/model contracts, generated report policy, and first follow-on stack slice be sequenced? | Planning scope and sequencing | John + Codex |

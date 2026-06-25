@@ -118,3 +118,20 @@ The most important distinction is:
 - Owner approval: the phase gate is closed.
 
 That split should be visible in every phase artifact and progress ledger.
+
+## Schema Contract Ownership
+
+Loom templates should make schema ownership explicit across phases.
+
+Suggested guidance:
+
+```md
+## Schema / Model Contract Boundary
+
+- Architecture sketches conceptual data shape, source of truth, stable identifiers, and downstream compatibility expectations.
+- Planning & Decomposition creates work items for schemas, model contracts, fixture coverage, and compatibility checks.
+- Contracts & Tests locks executable schema/model contracts with fixtures, tests, and stability rules.
+- Implementation satisfies those contracts and approval-gates semantic contract changes.
+```
+
+Rationale: structured-output projects can otherwise drift between architecture diagrams, planning tasks, test fixtures, and implementation details without a single phase owning when schemas become binding.
