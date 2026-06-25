@@ -4,22 +4,25 @@ This directory contains the project-specific Loom artifacts for BOMFlow.
 
 ## Current Phase
 
-BOMFlow is ready for **Phase 2: Requirements**. Phase 1 Discovery is complete.
+BOMFlow is ready for **Phase 3: Architecture**. Phase 1 Discovery and Phase 2 Requirements are complete.
 
 - [Discovery artifact](phases/01-discovery/README.md)
 - [Discovery progress](phases/01-discovery/PROGRESS.md)
+- [Requirements artifact](phases/02-requirements/README.md)
+- [Requirements progress](phases/02-requirements/PROGRESS.md)
 
 ## Project Progress
 
 - [Progress ledger](PROGRESS.md)
+- [Reusable Loom process feedback](PROCESS-FEEDBACK.md)
 
 ## Phase Map
 
 | Phase | Status | Artifact | Progress |
 |-------|--------|----------|----------|
 | Discovery | Complete | [README](phases/01-discovery/README.md) | [PROGRESS](phases/01-discovery/PROGRESS.md) |
-| Requirements | Next | TBD | TBD |
-| Architecture | Not started | TBD | TBD |
+| Requirements | Complete | [README](phases/02-requirements/README.md) | [PROGRESS](phases/02-requirements/PROGRESS.md) |
+| Architecture | Next | TBD | TBD |
 | Planning & Decomposition | Not started | TBD | TBD |
 | Contracts & Tests | Not started | TBD | TBD |
 | Implementation | Not started | TBD | TBD |

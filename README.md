@@ -4,11 +4,11 @@ BOMFlow is a prototype for bringing sustainability signals into hardware design 
 
 ## Status
 
-BOMFlow has completed **Phase 1: Discovery** and is ready for **Phase 2: Requirements**. No implementation workflow is defined yet.
+BOMFlow has completed **Phase 1: Discovery** and **Phase 2: Requirements**. No implementation workflow is defined yet.
 
 Next focus:
 
-- Convert the Discovery handoff into concrete requirements, acceptance criteria, and out-of-scope boundaries for the BOM Carbon Report.
+- Start Architecture for the BOM Carbon Report, using the JSON report model, contributor-ranking decisions, and canonical acceptance BOM fixture shape from Requirements.
 
 ## Roadmap Shape
 
@@ -20,6 +20,10 @@ The BOM Carbon Report is the first useful version. Design Review Delta and Integ
 
 The first report should be review-ready: summary, top contributors, line items, data-quality flags, review notes, and methodology caveat. Compliance-style reporting is a future state.
 
+## Technical Direction
+
+The first implementation should be a local, scriptable automation that can run like a CI/action workflow against versioned fixtures. It should favor a small Python runner, structured inputs, and a durable JSON report model. Later cycles can add human-readable rendering, typed UI, service, persistence, and deployment layers when the workflow needs them.
+
 ## Loom Workflow
 
 Project decisions and phase outputs live in [docs/loom](docs/loom):
@@ -28,5 +32,7 @@ Project decisions and phase outputs live in [docs/loom](docs/loom):
 - [Progress Ledger](docs/loom/PROGRESS.md)
 - [Completed Phase 1 Discovery](docs/loom/phases/01-discovery/README.md)
 - [Discovery Progress](docs/loom/phases/01-discovery/PROGRESS.md)
+- [Phase 2 Requirements](docs/loom/phases/02-requirements/README.md)
+- [Requirements Progress](docs/loom/phases/02-requirements/PROGRESS.md)
 
 Update the progress ledger whenever project direction, phase status, or completion evidence changes.
