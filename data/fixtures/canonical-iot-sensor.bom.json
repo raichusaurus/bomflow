@@ -1,0 +1,17 @@
+{
+  "bom_id": "canonical-iot-sensor",
+  "revision": "A",
+  "description": "IoT environmental sensor assembly",
+  "line_items": [
+    {"part_number": "PCB-001", "description": "Main sensor PCB", "category": " pcb ", "quantity": 1},
+    {"part_number": "MCU-001", "description": "Microcontroller", "category": "processor", "quantity": 1},
+    {"part_number": "SNS-001", "description": "Environmental sensor", "category": "Sensor", "quantity": 1},
+    {"part_number": "BAT-001", "description": "Battery", "category": "power", "quantity": 1},
+    {"part_number": "CON-001", "description": "Board connectors", "category": "Connector", "quantity": 2},
+    {"part_number": "RES-PACK", "description": "Resistor pack", "category": "passives", "quantity": 20},
+    {"part_number": "CAP-PACK", "description": "Capacitor pack", "category": "passives", "quantity": 10},
+    {"part_number": "ENC-001", "description": "Mechanical enclosure", "category": "mechanical", "quantity": 1},
+    {"part_number": "CBL-001", "description": "Internal cable", "category": "cable", "quantity": 1},
+    {"part_number": "LBL-001", "description": "Product label", "quantity": 1}
+  ]
+}

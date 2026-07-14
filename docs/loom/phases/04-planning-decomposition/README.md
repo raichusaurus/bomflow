@@ -125,7 +125,10 @@ Recommended scope:
 
 - Load generated report JSON.
 - Show BOM summary, top line-item contributors, top category contributors, data-quality flags, and review notes.
+- Show all line-item and category contributors by default and let users sort and filter both views while treating report JSON ordering as the initial order.
 - Avoid editing, persistence, hosted service, auth, supplier APIs, or compliance claims.
+
+A future catalog upload or configuration surface is separate from this report viewer slice. If added, it should use report conflict details to highlight all catalog rows involved in a duplicate normalized match key, let the user correct them, and regenerate the report.
 
 Go, Postgres, Docker, Terraform/AWS, and Rust should remain deferred until they own a real service, persistence, deployment, or utility problem.
 
