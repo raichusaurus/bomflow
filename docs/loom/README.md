@@ -4,7 +4,7 @@ This directory contains the project-specific Loom artifacts for BOMFlow.
 
 ## Current Phase
 
-BOMFlow is ready for **Phase 4: Planning & Decomposition**. Phase 1 Discovery, Phase 2 Requirements, and Phase 3 Architecture are complete.
+BOMFlow is ready for **Phase 5: Contracts & Tests**. Discovery, Requirements, Architecture, and Planning & Decomposition are complete.
 
 - [Discovery artifact](phases/01-discovery/README.md)
 - [Discovery progress](phases/01-discovery/PROGRESS.md)
@@ -12,6 +12,8 @@ BOMFlow is ready for **Phase 4: Planning & Decomposition**. Phase 1 Discovery, P
 - [Requirements progress](phases/02-requirements/PROGRESS.md)
 - [Architecture artifact](phases/03-architecture/README.md)
 - [Architecture progress](phases/03-architecture/PROGRESS.md)
+- [Planning & Decomposition artifact](phases/04-planning-decomposition/README.md)
+- [Planning & Decomposition progress](phases/04-planning-decomposition/PROGRESS.md)
 
 ## Project Progress
 
@@ -25,8 +27,8 @@ BOMFlow is ready for **Phase 4: Planning & Decomposition**. Phase 1 Discovery, P
 | Discovery | Complete | [README](phases/01-discovery/README.md) | [PROGRESS](phases/01-discovery/PROGRESS.md) |
 | Requirements | Complete | [README](phases/02-requirements/README.md) | [PROGRESS](phases/02-requirements/PROGRESS.md) |
 | Architecture | Complete | [README](phases/03-architecture/README.md) | [PROGRESS](phases/03-architecture/PROGRESS.md) |
-| Planning & Decomposition | Next | TBD | TBD |
-| Contracts & Tests | Not started | TBD | TBD |
+| Planning & Decomposition | Complete | [README](phases/04-planning-decomposition/README.md) | [PROGRESS](phases/04-planning-decomposition/PROGRESS.md) |
+| Contracts & Tests | Next | TBD | TBD |
 | Implementation | Not started | TBD | TBD |
 | Review & Retrospective | Not started | TBD | TBD |
 

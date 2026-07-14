@@ -135,3 +135,52 @@ Suggested guidance:
 ```
 
 Rationale: structured-output projects can otherwise drift between architecture diagrams, planning tasks, test fixtures, and implementation details without a single phase owning when schemas become binding.
+
+## Planning Work Package IDs
+
+Planning templates should include explicit work-package IDs that can carry into Contracts & Tests and Implementation.
+
+Suggested template:
+
+```md
+## Implementation Units
+
+| ID | Unit | Description | Dependencies | Primary Files | Acceptance Signal |
+|----|------|-------------|--------------|---------------|-------------------|
+```
+
+Rationale: stable IDs make it easier to trace planned work into tests, implementation commits, progress ledgers, and follow-on phase handoffs.
+
+## Generated Artifact Policy
+
+Local automation projects should decide generated artifact handling during Planning & Decomposition.
+
+Suggested prompt:
+
+```md
+## Generated Artifact Policy
+
+- Which files are source inputs?
+- Which files are generated outputs?
+- Should generated examples be committed, ignored, regenerated in CI, or published separately?
+- What prevents stale generated files from becoming accidental source of truth?
+```
+
+Rationale: generated reports, snapshots, exports, and demo files can blur source-of-truth boundaries if the project does not decide their lifecycle before implementation.
+
+## Follow-On Stack Slice
+
+Planning templates should ask which future stack element should come next and what user or operator problem it solves.
+
+Suggested template:
+
+```md
+## Follow-On Stack Slice
+
+- Recommended next stack element:
+- Trigger for starting:
+- Useful scope:
+- Explicit non-goals:
+```
+
+Rationale: stack evidence is strongest when each language, framework, service, or infrastructure piece owns real behavior instead of acting as decorative scaffolding.

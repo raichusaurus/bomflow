@@ -5,11 +5,11 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 ## Project Snapshot
 
 **Project:** bomflow  
-**Date:** 2026-06-25  
+**Date:** 2026-07-13  
 **Owner:** John Hightshue + Codex  
-**Current Focus:** Phase 4 Planning & Decomposition  
-**Total Complete:** 43%  
-**Calculation Basis:** Equal phase weights; Discovery, Requirements, and Architecture are complete, and later phases are unopened.
+**Current Focus:** Phase 5 Contracts & Tests  
+**Total Complete:** 57%  
+**Calculation Basis:** Equal phase weights; Discovery, Requirements, Architecture, and Planning & Decomposition are complete, and later phases are unopened.
 
 ## Top-Level Phase Completion
 
@@ -18,11 +18,11 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 | Discovery | 100% | 1 | [Discovery Progress](phases/01-discovery/PROGRESS.md) | Complete; ready for Requirements. |
 | Requirements | 100% | 1 | [Requirements Progress](phases/02-requirements/PROGRESS.md) | Complete; ready for Architecture. |
 | Architecture | 100% | 1 | [Architecture Progress](phases/03-architecture/PROGRESS.md) | Complete; ready for Planning & Decomposition. |
-| Planning & Decomposition | 0% | 1 | Planning Progress | Not started. |
+| Planning & Decomposition | 100% | 1 | [Planning Progress](phases/04-planning-decomposition/PROGRESS.md) | Complete; ready for Contracts & Tests. |
 | Contracts & Tests | 0% | 1 | Contracts & Tests Progress | Not started. |
 | Implementation | 0% | 1 | Implementation Progress | Not started. |
 | Review & Retrospective | 0% | 1 | Review Progress | Not started. |
-| **Phase Total** | **43%** | | | Rounded from 300 / 700. |
+| **Phase Total** | **57%** | | | Rounded from 400 / 700. |
 
 ## Scope Inventory
 
@@ -31,7 +31,7 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 | Discovery | Phase | Project | [Discovery README](phases/01-discovery/README.md) | `phases/01-discovery/PROGRESS.md` | N/A | N/A | Included |
 | Requirements | Phase | Project | [Requirements README](phases/02-requirements/README.md) | `phases/02-requirements/PROGRESS.md` | N/A | N/A | Included |
 | Architecture | Phase | Project | [Architecture README](phases/03-architecture/README.md) | `phases/03-architecture/PROGRESS.md` | `bomflow/` package, `data/fixtures/`, `data/catalogs/`, `reports/`, `.github/workflows/` | `tests/` | Included |
-| Planning & Decomposition | Phase | Project | Not started | TBD | TBD | TBD | Included later |
+| Planning & Decomposition | Phase | Project | [Planning README](phases/04-planning-decomposition/README.md) | `phases/04-planning-decomposition/PROGRESS.md` | `bomflow/` package, `data/fixtures/`, `data/catalogs/`, `reports/`, `.github/workflows/`, future `web/` | `tests/`, optional `schemas/` | Included |
 | Contracts & Tests | Phase | Project | Not started | TBD | TBD | TBD | Included later |
 | Implementation | Phase | Project | Not started | TBD | TBD | TBD | Included later |
 | Review & Retrospective | Phase | Project | Not started | TBD | N/A | N/A | Included later |
@@ -43,12 +43,13 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 | Discovery | Phase | Project | 100% | Complete; ready for Requirements | [Progress](phases/01-discovery/PROGRESS.md) | Complete |
 | Requirements | Phase | Project | 100% | Complete; ready for Architecture | [Progress](phases/02-requirements/PROGRESS.md) | Complete |
 | Architecture | Phase | Project | 100% | Complete; ready for Planning & Decomposition | [Progress](phases/03-architecture/PROGRESS.md) | Complete |
+| Planning & Decomposition | Phase | Project | 100% | Complete; ready for Contracts & Tests | [Progress](phases/04-planning-decomposition/PROGRESS.md) | Complete |
 
 ## Next Score-Changing Actions
 
 | Action | Phase / Area | Expected Score Impact | Owner |
 |--------|--------------|-----------------------|-------|
-| Start Planning & Decomposition from architecture handoff | Planning & Decomposition | Opens Phase 4 with module-level implementation units | John + Codex |
+| Start Contracts & Tests from the approved Planning handoff | Contracts & Tests | Opens Phase 5 with explicit contract targets and fixture expectations | John + Codex |
 
 ## Decisions and Adjustments
 
@@ -71,9 +72,11 @@ Project-specific completion ledger for BOMFlow. This root file is the project co
 | 2026-06-25 | Architecture | Refined Architecture decisions from owner questions | Anchored Python runtime to a modern hardware automation stack, confirmed modularity, chose standard-library-first dependencies, clarified JSON consumer priority, timestamp determinism, schema contract boundary, and artifact paths. | John + Codex |
 | 2026-06-25 | Architecture | Added explicit portfolio stack evidence roadmap | Keeps Python report core practical while planning credible CI, Vue/TypeScript, Go, Postgres, Docker, Terraform/AWS, and Rust follow-on slices where useful. | John + Codex |
 | 2026-06-25 | Architecture | Closed Architecture phase gate | Owner approved the Architecture handoff to Planning & Decomposition. | John |
+| 2026-06-25 | Planning & Decomposition | Opened Planning & Decomposition phase with draft implementation units and sequencing | Converts Architecture into work packages, contract candidates, implementation order, generated artifact policy, and follow-on stack slice recommendation. | John + Codex |
+| 2026-07-13 | Planning & Decomposition | Closed Planning & Decomposition phase gate | Owner approved the generated artifact policy, `pytest` development test posture, framework-neutral TypeScript viewer follow-on, and handoff to Contracts & Tests. | John |
 
 ## Open Progress Questions
 
 | Scope | Question | Needed To Score Accurately | Owner |
 |-------|----------|----------------------------|-------|
-| Planning & Decomposition | How should the Python core, CI proof, schema/model contracts, generated report policy, and first follow-on stack slice be sequenced? | Planning scope and sequencing | John + Codex |
+| Contracts & Tests | Which executable contracts and focused fixtures should be created first from the approved Planning handoff? | Phase 5 scope and sequencing | John + Codex |
