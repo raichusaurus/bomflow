@@ -4,11 +4,11 @@ BOMFlow is a prototype for bringing sustainability signals into hardware design 
 
 ## Status
 
-BOMFlow has completed **Phase 1: Discovery** and **Phase 2: Requirements**. No implementation workflow is defined yet.
+BOMFlow has completed Discovery, Requirements, Architecture, and Planning & Decomposition. The implementation workflow is planned; executable contracts and tests come next.
 
 Next focus:
 
-- Start Architecture for the BOM Carbon Report, using the JSON report model, contributor-ranking decisions, and canonical acceptance BOM fixture shape from Requirements.
+- Start Contracts & Tests for the BOM Carbon Report using the approved Planning handoff.
 
 ## Roadmap Shape
 
@@ -34,5 +34,9 @@ Project decisions and phase outputs live in [docs/loom](docs/loom):
 - [Discovery Progress](docs/loom/phases/01-discovery/PROGRESS.md)
 - [Phase 2 Requirements](docs/loom/phases/02-requirements/README.md)
 - [Requirements Progress](docs/loom/phases/02-requirements/PROGRESS.md)
+- [Completed Phase 3 Architecture](docs/loom/phases/03-architecture/README.md)
+- [Architecture Progress](docs/loom/phases/03-architecture/PROGRESS.md)
+- [Completed Phase 4 Planning & Decomposition](docs/loom/phases/04-planning-decomposition/README.md)
+- [Planning & Decomposition Progress](docs/loom/phases/04-planning-decomposition/PROGRESS.md)
 
 Update the progress ledger whenever project direction, phase status, or completion evidence changes.
